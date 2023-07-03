@@ -1,4 +1,3 @@
-// types.ts
 export interface IStats {
   Strength: number;
   Intelligence: number;

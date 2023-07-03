@@ -1,4 +1,3 @@
-// CardStats.tsx
 import { IStats } from "./cardTypes";
 
 interface CardStatsProps {
