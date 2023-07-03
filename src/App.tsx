@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { ICharacter } from "./components/cards/cardTypes";
 import Card from "./components/cards/Card";
-import characters from "./data/cards.json";
+import characters from "./data/testCards.json";
 import "./styles/App.css";
 
 function App() {
