@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "Character 1",
+    "imageUrl": "https://example.com/image1.jpg",
+    "stats": {
+      "Strength": 5,
+      "Intelligence": 10,
+      "Speed": 7,
+      "Endurance": 8,
+      "Power": 9,
+      "Courage": 6
+    }
+  }
+]
