@@ -6,11 +6,13 @@ interface CardProps {
   character: ICharacter;
 }
 
-const Card = ({ character }: CardProps) => (
-  <div className="card">
-    <CardHeader name={character.name} />
-    <CardStats stats={character.stats} />
-  </div>
-);
+function Card({ character }: CardProps) {
+  return (
+    <div className="card">
+      <CardHeader name={character.name} />
+      <CardStats stats={character.stats} />
+    </div>
+  );
+}
 
 export default Card;
