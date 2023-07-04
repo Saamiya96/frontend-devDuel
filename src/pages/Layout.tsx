@@ -5,7 +5,7 @@ function Layout() {
     <>
       <nav>
         <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/game">Game</Link>
       </nav>
       <Outlet />
     </>
