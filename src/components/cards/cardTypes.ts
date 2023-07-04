@@ -6,7 +6,7 @@ export interface IStats {
   job_availability: number;
 }
 
-export interface ICharacter {
+export interface ILanguage {
   id: number;
   name: string;
   imageUrl: string;
