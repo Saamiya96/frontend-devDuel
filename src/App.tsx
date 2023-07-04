@@ -1,23 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import { ICharacter } from "./components/cards/cardTypes";
-import Card from "./components/cards/Card";
-import characters from "./data/testCards.json";
+import Layout from "./pages/Layout";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <div className="app">
-        {characters.map((character: ICharacter) => (
-          <Card key={character.id} character={character} />
-        ))}
-      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+        </Route>
       </Routes>
     </Router>
   );
