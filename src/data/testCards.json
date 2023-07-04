@@ -1,15 +1,14 @@
 [
   {
     "id": 1,
-    "name": "Character 1",
-    "imageUrl": "https://example.com/image1.jpg",
+    "name": "Javascript",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
     "stats": {
-      "Strength": 5,
-      "Intelligence": 10,
-      "Speed": 7,
-      "Endurance": 8,
-      "Power": 9,
-      "Courage": 6
+      "age": 10,
+      "avg_salary": 71457,
+      "downloads": 5000000,
+      "popularity": 99,
+      "job_availability": 95
     }
   }
 ]

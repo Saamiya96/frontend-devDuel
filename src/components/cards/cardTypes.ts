@@ -1,10 +1,9 @@
 export interface IStats {
-  Strength: number;
-  Intelligence: number;
-  Speed: number;
-  Endurance: number;
-  Power: number;
-  Courage: number;
+  age: number;
+  avg_salary: number;
+  downloads: number;
+  popularity: number;
+  job_availability: number;
 }
 
 export interface ICharacter {

@@ -3,9 +3,10 @@ import { Outlet, Link } from "react-router-dom";
 function Layout() {
   return (
     <>
-      <nav>
-        <Link to="/about">About</Link>
-        <Link to="/game">Game</Link>
+      <nav className="flex justify-end">
+        <Link to="/about" className="">
+          About
+        </Link>
       </nav>
       <Outlet />
     </>
