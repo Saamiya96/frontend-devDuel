@@ -1,18 +1,18 @@
-import { ICharacter } from "./cardTypes";
+import { ILanguage } from "./cardTypes";
 import CardHeader from "./CardHeader";
 import CardImage from "./CardImage";
 import CardStats from "./CardStats";
 
 interface CardProps {
-  character: ICharacter;
+  language: ILanguage;
 }
 
-function Card({ character }: CardProps) {
+function Card({ language }: CardProps) {
   return (
     <div className="card">
-      <CardHeader name={character.name} />
-      <CardImage imageUrl={character.imageUrl} />
-      <CardStats stats={character.stats} />
+      <CardHeader name={language.name} />
+      <CardImage imageUrl={language.imageUrl} />
+      <CardStats stats={language.stats} />
     </div>
   );
 }
