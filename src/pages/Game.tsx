@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../components/cards/Card";
-import languages from "../data/testCards.json";
+// import languages from "../data/testCards.json";
+import { useFetch } from "../hooks/useFetch";
 import { ILanguage } from "../components/cards/cardTypes";
 import useSocket from "../hooks/useSocket";
 
@@ -11,6 +12,7 @@ function CardList() {
     null
   );
   const socket = useSocket(ENDPOINT, selectedStatValue);
+  const data = useFetch("http://localhost:5000/data");
 
   useEffect(() => {
     if (socket) {
@@ -20,15 +22,18 @@ function CardList() {
     }
   }, [socket]);
 
+  console.log(data);
+
   return (
     <div>
-      {languages.map((language: ILanguage) => (
-        <Card
-          key={language.id}
-          language={language}
-          onStatSelect={setSelectedStatValue}
-        />
-      ))}
+      {data &&
+        data.map((language: ILanguage) => (
+          <Card
+            key={language.id}
+            language={language}
+            onStatSelect={setSelectedStatValue}
+          />
+        ))}
       {selectedStatValue !== null && (
         <p>Selected stat value: {selectedStatValue}</p>
       )}
