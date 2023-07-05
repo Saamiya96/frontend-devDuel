@@ -1,28 +1,33 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import socketIOClient, { Socket } from "socket.io-client";
 
-type SocketMessage = {
+interface SocketMessage {
   username: string;
   stat: number | null;
-};
+}
 
-const useSocket = (endpoint: string, { username, stat }: SocketMessage) => {
+const useSocket = (endpoint: string, message: SocketMessage) => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
     const newSocket = socketIOClient(endpoint);
     setSocket(newSocket);
 
+    newSocket.emit("username", message.username);
+
     return () => {
       newSocket.disconnect();
     };
-  }, [endpoint]);
+  }, [endpoint, message.username]);
 
   useEffect(() => {
-    if (socket && stat !== null) {
-      socket.emit("message", { username, stat });
+    if (socket && message.stat !== null) {
+      socket.emit("message", {
+        username: message.username,
+        stat: message.stat,
+      });
     }
-  }, [socket, username, stat]);
+  }, [socket, message]);
 
   return socket;
 };
