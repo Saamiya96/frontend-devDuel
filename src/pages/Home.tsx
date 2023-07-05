@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 import useUsername from "../hooks/useUsername";
 import { useState } from "react";
 import UsernameForm from "../components/forms/UsernameForm";
-import Rules from "../components/texts/Rules";
+import Rules from "../components/text/Rules";
 import SeeRulesButton from "../components/buttons/SeeRulesButton";
 
 function Home() {

@@ -18,28 +18,22 @@ function Rules({ isVisible }: RulesProps) {
     >
       <div className="bg-gray-100 rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">Game Rules</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li className="text-lg">
-            Two players will take turns to select a card stat.
-          </li>
-          <li className="text-lg">
+        <ul className="list-disc list-inside space-y-2 text-lg">
+          <li>Two players will take turns to select a card stat.</li>
+          <li>
             Those stats will be compared - the round winner will be the highest
             of the two stats.
           </li>
-          <li className="text-lg">
-            The round winner will then pick the next stat.
-          </li>
-          <li className="text-lg">
-            Each player will have 10 cards, resulting in 10 rounds.
-          </li>
-          <li className="text-lg">
+          <li>The round winner will then pick the next stat.</li>
+          <li>Each player will have 10 cards, resulting in 10 rounds.</li>
+          <li>
             If the stats are equal, both players lose the round and the
             subsequent cards are sent into the black hole.
           </li>
-          <li className="text-lg">
+          <li>
             The game is over after 10 rounds (all cards have been played).
           </li>
-          <li className="text-lg">
+          <li>
             The overall winner is the player with the highest total round wins.
           </li>
         </ul>
