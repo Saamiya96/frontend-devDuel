@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import socketIOClient, { Socket } from "socket.io-client";
 
-const useSocket = (endpoint: string, message: number | null) => {
+type SocketMessage = {
+  username: string;
+  stat: number | null;
+};
+
+const useSocket = (endpoint: string, { username, stat }: SocketMessage) => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
@@ -14,10 +19,10 @@ const useSocket = (endpoint: string, message: number | null) => {
   }, [endpoint]);
 
   useEffect(() => {
-    if (socket && message !== null) {
-      socket.emit("message", message);
+    if (socket && stat !== null) {
+      socket.emit("message", { username, stat });
     }
-  }, [socket, message]);
+  }, [socket, username, stat]);
 
   return socket;
 };
