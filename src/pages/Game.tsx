@@ -11,13 +11,13 @@ function CardList() {
   const [selectedStatValue, setSelectedStatValue] = useState<number | null>(
     null
   );
-  const [data, setData] = useState<ILanguage[]>([]);
+  const [data, setData] = useState<ILanguage | null>(null);
 
   const socket = useSocket(ENDPOINT, { username, stat: selectedStatValue });
 
   useEffect(() => {
     if (socket) {
-      socket.on("data", (newData: ILanguage[]) => {
+      socket.on("data", (newData: ILanguage) => {
         setData(newData);
       });
     }
@@ -30,14 +30,13 @@ function CardList() {
 
   return (
     <div>
-      {data &&
-        data.map((language: ILanguage) => (
-          <Card
-            key={language.id}
-            language={language}
-            onStatSelect={setSelectedStatValue}
-          />
-        ))}
+      {data && (
+        <Card
+          key={data.id}
+          language={data}
+          onStatSelect={setSelectedStatValue}
+        />
+      )}
       {selectedStatValue !== null && (
         <p>Selected stat value: {selectedStatValue}</p>
       )}
