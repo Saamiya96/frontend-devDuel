@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import About from "./pages/About";
 import Game from "./pages/Game";
+
 import "./styles/App.css";
 
 function App() {

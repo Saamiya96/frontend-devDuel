@@ -8,19 +8,15 @@ function Layout() {
     <>
       <nav className="flex justify-end">
         <motion.div
-            className="box"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
           {location.pathname === "/about" ? (
-            <Link to="/">
-              Back
-            </Link>
+            <Link to="/">Back</Link>
           ) : (
-            <Link to="/about">
-              About
-            </Link>
+            <Link to="/about">About</Link>
           )}
         </motion.div>
       </nav>

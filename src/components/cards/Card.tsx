@@ -5,14 +5,15 @@ import CardStats from "./CardStats";
 
 interface CardProps {
   language: ILanguage;
+  onStatSelect: (statValue: number) => void;
 }
 
-function Card({ language }: CardProps) {
+function Card({ language, onStatSelect }: CardProps) {
   return (
     <div className="card">
       <CardHeader name={language.name} />
       <CardImage imageUrl={language.imageUrl} />
-      <CardStats stats={language.stats} />
+      <CardStats stats={language.stats} onStatSelect={onStatSelect} />
     </div>
   );
 }
