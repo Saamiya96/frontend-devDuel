@@ -4,6 +4,7 @@ import socketIOClient, { Socket } from "socket.io-client";
 interface SocketMessage {
   username: string;
   stat: number | null;
+  shouldSend: boolean;
 }
 
 const useSocket = (endpoint: string, message: SocketMessage) => {
@@ -21,7 +22,7 @@ const useSocket = (endpoint: string, message: SocketMessage) => {
   }, [endpoint, message.username]);
 
   useEffect(() => {
-    if (socket && message.stat !== null) {
+    if (socket && message.stat !== null && message.shouldSend) {
       socket.emit("message", {
         username: message.username,
         stat: message.stat,
