@@ -14,6 +14,7 @@ function CardList() {
   const [shouldSend, setShouldSend] = useState(false);
   const [data, setData] = useState<ILanguage | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [resultMessage, setResultMessage] = useState<string | null>(null);
 
   const socket = useSocket(ENDPOINT, {
     username,
@@ -30,6 +31,10 @@ function CardList() {
 
       socket.on("message", (newMessage: string) => {
         setMessage(newMessage);
+      });
+
+      socket.on("result", (newResultMessage: string) => {
+        setResultMessage(newResultMessage);
       });
     }
     return () => {
@@ -55,6 +60,7 @@ function CardList() {
         <p>Selected stat value: {selectedStatValue}</p>
       )}
       {message && <p>{message}</p>}
+      {resultMessage && <p>{resultMessage}</p>}
     </div>
   );
 }
