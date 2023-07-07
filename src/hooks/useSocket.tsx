@@ -4,10 +4,12 @@ import socketIOClient, { Socket } from "socket.io-client";
 interface SocketMessage {
   username: string;
   stat: number | null;
+  shouldSend: boolean;
 }
 
 const useSocket = (endpoint: string, message: SocketMessage) => {
   const [socket, setSocket] = useState<Socket | null>(null);
+  const [messageSent, setMessageSent] = useState(false);
 
   useEffect(() => {
     const newSocket = socketIOClient(endpoint);
@@ -21,13 +23,20 @@ const useSocket = (endpoint: string, message: SocketMessage) => {
   }, [endpoint, message.username]);
 
   useEffect(() => {
-    if (socket && message.stat !== null) {
-      socket.emit("message", {
-        username: message.username,
-        stat: message.stat,
+    if (socket) {
+      socket.on("data", () => {
+        setMessageSent(false);
       });
+
+      if (message.stat !== null && message.shouldSend && !messageSent) {
+        socket.emit("message", {
+          username: message.username,
+          stat: message.stat,
+        });
+        setMessageSent(true);
+      }
     }
-  }, [socket, message]);
+  }, [socket, message, messageSent]);
 
   return socket;
 };
