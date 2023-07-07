@@ -41,7 +41,6 @@ function CardList() {
 
   return (
     <div>
-      {message && <p>{message}</p>}
       {data && (
         <Card
           key={data.id}
@@ -55,6 +54,7 @@ function CardList() {
       {selectedStatValue !== null && (
         <p>Selected stat value: {selectedStatValue}</p>
       )}
+      {message && <p>{message}</p>}
     </div>
   );
 }
