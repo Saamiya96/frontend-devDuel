@@ -11,6 +11,7 @@ function CardList() {
   const [selectedStatValue, setSelectedStatValue] = useState<string | null>(
     null
   );
+  const [pendingStatValue, setPendingStatValue] = useState<string | null>(null);
   const [shouldSend, setShouldSend] = useState(false);
   const [data, setData] = useState<ILanguage | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -50,14 +51,32 @@ function CardList() {
         <Card
           key={data.id}
           language={data}
+          pendingStat={pendingStatValue}
           onStatSelect={(value) => {
-            setSelectedStatValue(value);
-            setShouldSend(true);
+            setPendingStatValue(value);
           }}
         />
       )}
-      {selectedStatValue !== null && (
-        <p>Selected stat value: {selectedStatValue}</p>
+      {pendingStatValue !== null && (
+        <div>
+          <p>Pending stat value: {pendingStatValue}</p>
+          <button
+            onClick={() => {
+              setSelectedStatValue(pendingStatValue);
+              setShouldSend(true);
+              setPendingStatValue(null);
+            }}
+          >
+            Confirm
+          </button>
+          <button
+            onClick={() => {
+              setPendingStatValue(null);
+            }}
+          >
+            Cancel
+          </button>
+        </div>
       )}
       {message && <p>{message}</p>}
       {resultMessage && <p>{resultMessage}</p>}
