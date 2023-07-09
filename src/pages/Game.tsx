@@ -17,7 +17,7 @@ function CardList() {
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
 
-  const socket = useSocket(ENDPOINT, {
+  const { socket, thinkingStat } = useSocket(ENDPOINT, {
     username,
     stat: selectedStatValue,
     shouldSend,
@@ -54,9 +54,13 @@ function CardList() {
           pendingStat={pendingStatValue}
           onStatSelect={(value) => {
             setPendingStatValue(value);
+            if (socket) {
+              socket.emit("thinking_stat", value);
+            }
           }}
         />
       )}
+      {thinkingStat && <p>{thinkingStat}</p>}
       {pendingStatValue !== null && (
         <div>
           <p>Pending stat value: {pendingStatValue}</p>

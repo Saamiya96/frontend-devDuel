@@ -10,11 +10,16 @@ interface SocketMessage {
 const useSocket = (endpoint: string, message: SocketMessage) => {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [messageSent, setMessageSent] = useState(false);
+  const [thinkingStat, setThinkingStat] = useState<string | null>(null);
 
   useEffect(() => {
     const newSocket = socketIOClient(endpoint);
     setSocket(newSocket);
     newSocket.emit("username", { username: message.username });
+
+    newSocket.on("thinking_stat", (stat: string) => {
+      setThinkingStat(stat);
+    });
 
     return () => {
       newSocket.disconnect();
@@ -37,7 +42,7 @@ const useSocket = (endpoint: string, message: SocketMessage) => {
     }
   }, [socket, message, messageSent]);
 
-  return socket;
+  return { socket, thinkingStat };
 };
 
 export default useSocket;
