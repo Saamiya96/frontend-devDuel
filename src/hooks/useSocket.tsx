@@ -14,8 +14,7 @@ const useSocket = (endpoint: string, message: SocketMessage) => {
   useEffect(() => {
     const newSocket = socketIOClient(endpoint);
     setSocket(newSocket);
-
-    newSocket.emit("username", message.username);
+    newSocket.emit("username", { username: message.username });
 
     return () => {
       newSocket.disconnect();
