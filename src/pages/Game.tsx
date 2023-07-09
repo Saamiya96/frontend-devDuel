@@ -8,7 +8,7 @@ const ENDPOINT = "http://localhost:5000";
 
 function CardList() {
   const { username } = useUsername();
-  const [selectedStatValue, setSelectedStatValue] = useState<number | null>(
+  const [selectedStatValue, setSelectedStatValue] = useState<string | null>(
     null
   );
   const [shouldSend, setShouldSend] = useState(false);

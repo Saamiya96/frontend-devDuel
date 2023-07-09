@@ -5,7 +5,7 @@ import CardStats from "./CardStats";
 
 interface CardProps {
   language: ILanguage;
-  onStatSelect: (statValue: number) => void;
+  onStatSelect: (statValue: string) => void;
 }
 
 function Card({ language, onStatSelect }: CardProps) {

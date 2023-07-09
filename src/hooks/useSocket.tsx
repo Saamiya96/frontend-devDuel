@@ -3,7 +3,7 @@ import socketIOClient, { Socket } from "socket.io-client";
 
 interface SocketMessage {
   username: string;
-  stat: number | null;
+  stat: string | null;
   shouldSend: boolean;
 }
 
