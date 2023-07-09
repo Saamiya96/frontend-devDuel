@@ -7,9 +7,15 @@ interface CardProps {
   language: ILanguage;
   onStatSelect: (stat: string) => void;
   pendingStat: string | null;
+  leadingPlayer: boolean;
 }
 
-function Card({ language, onStatSelect, pendingStat }: CardProps) {
+function Card({
+  language,
+  onStatSelect,
+  pendingStat,
+  leadingPlayer,
+}: CardProps) {
   return (
     <div className="card">
       <CardHeader name={language.name} />
@@ -18,6 +24,7 @@ function Card({ language, onStatSelect, pendingStat }: CardProps) {
         stats={language.stats}
         onStatSelect={onStatSelect}
         pendingStat={pendingStat}
+        leadingPlayer={leadingPlayer}
       />
     </div>
   );

@@ -13,6 +13,7 @@ function CardList() {
   );
   const [pendingStatValue, setPendingStatValue] = useState<string | null>(null);
   const [shouldSend, setShouldSend] = useState(false);
+  const [isLeadingPlayer, setLeadingPlayer] = useState(false);
   const [data, setData] = useState<ILanguage | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
@@ -34,6 +35,10 @@ function CardList() {
         setMessage(newMessage);
       });
 
+      socket.on("leader", (newLeader: boolean) => {
+        setLeadingPlayer(newLeader);
+      });
+
       socket.on("result", (newResultMessage: string) => {
         setResultMessage(newResultMessage);
       });
@@ -45,6 +50,17 @@ function CardList() {
     };
   }, [socket]);
 
+  const handleStatSelect = (value: string) => {
+    if (isLeadingPlayer) {
+      setPendingStatValue(value);
+      if (socket) {
+        socket.emit("thinking_stat", value);
+      }
+    } else {
+      setMessage("Wait your turn loser...");
+    }
+  };
+
   return (
     <div>
       {data && (
@@ -52,16 +68,12 @@ function CardList() {
           key={data.id}
           language={data}
           pendingStat={pendingStatValue}
-          onStatSelect={(value) => {
-            setPendingStatValue(value);
-            if (socket) {
-              socket.emit("thinking_stat", value);
-            }
-          }}
+          leadingPlayer={isLeadingPlayer}
+          onStatSelect={handleStatSelect}
         />
       )}
       {thinkingStat && <p>{thinkingStat}</p>}
-      {pendingStatValue !== null && (
+      {isLeadingPlayer && pendingStatValue !== null && (
         <div>
           <p>Pending stat value: {pendingStatValue}</p>
           <button
