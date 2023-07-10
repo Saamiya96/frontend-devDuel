@@ -4,6 +4,7 @@ import Layout from "./pages/Layout";
 import About from "./pages/About";
 import Game from "./pages/Game";
 import WaitingRoom from "./pages/WaitingRoom";
+import Result from "./pages/Result";
 
 import "./styles/App.css";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="game" element={<Game />} />
           <Route path="waitingroom" element={<WaitingRoom />} />
+          <Route path="result" element={<Result />} />
         </Route>
       </Routes>
     </Router>
