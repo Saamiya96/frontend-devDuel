@@ -31,3 +31,4 @@ function SeeRulesButton({ isVisible, toggleVisibility }: SeeRulesButtonProps) {
 }
 
 export default SeeRulesButton;
+
