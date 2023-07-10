@@ -28,9 +28,9 @@
 import { useState, useEffect } from "react";
 
 interface Result {
-  username: string;
-  score: number;
+  [username: string]: number;
 }
+
 
 const ResultsPage = () => {
   const [results, setResults] = useState<Result[]>([]);
@@ -50,10 +50,10 @@ const ResultsPage = () => {
   return (
     <div>
       <h1>Results</h1>
-      {results.map((result) => (
-        <div key={result.username}>
-          <h3>{result.username}</h3>
-          <p>Score: {result.score}</p>
+      {Object.entries(results).map(([username, score]) => (
+        <div>
+          <h3>User:{username}</h3>
+          <p>Score: {score}</p>
         </div>
       ))}
     </div>
