@@ -1,39 +1,33 @@
-import { ChangeEvent } from "react";
+import { motion } from "framer-motion";
+import React, { ChangeEvent } from "react";
 import useUsername from "../hooks/useUsername";
-import { useState } from "react";
+
 import UsernameForm from "../components/forms/UsernameForm";
-import Rules from "../components/text/Rules";
-import SeeRulesButton from "../components/buttons/SeeRulesButton";
+import RulesMenu from "../components/menus/RulesMenu";
+
+const homePositioning = "flex flex-col justify-around items-center";
+const contentWidth = "max-w-lg"; // Set the desired width for the content
 
 function Home() {
   const { username, setUsername } = useUsername();
-  const [isVisible, setIsVisible] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };
 
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
-
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col items-center">
-        <UsernameForm
-          isVisible={isVisible}
-          username={username}
-          handleChange={handleChange}
-        />
-        <div className="show-hide-box flex flex-col items-center">
-          <Rules isVisible={isVisible} />
-          <SeeRulesButton
-            isVisible={isVisible}
-            toggleVisibility={toggleVisibility}
-          />
-        </div>
-      </div>
-    </div>
+    <motion.div 
+      className={`${homePositioning} ${contentWidth}`}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeInOut" },
+      }}
+    >
+      <UsernameForm username={username} handleChange={handleChange} />
+      <RulesMenu />
+    </motion.div>
   );
 }
 
