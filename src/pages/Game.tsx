@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import MyTimer from "../components/timer/MyTimer";
 import Card from "../components/cards/Card";
 import { ILanguage } from "../components/cards/cardTypes";
@@ -18,6 +19,7 @@ function CardList() {
   const [data, setData] = useState<ILanguage | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
+  const [resultsPage, setResultsPage] = useState<boolean>(false);
   const [timer, setTimer] = useState<boolean>(false);
   const [countdown, setCountdown] = useState<number | null>(null);
 
@@ -44,6 +46,7 @@ function CardList() {
 
       socket.on("result", (newResultMessage: string) => {
         setResultMessage(newResultMessage);
+        setResultsPage(true);
       });
 
       socket.on("start_timer", (newTimer: boolean) => {
@@ -75,6 +78,7 @@ function CardList() {
   return (
     <div>
       <MyTimer countdown={countdown} timer={timer} />
+      {resultsPage && <Link to="/result">Link to Results Page</Link>}
       {data && (
         <Card
           key={data.id}
