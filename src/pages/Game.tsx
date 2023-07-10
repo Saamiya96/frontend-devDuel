@@ -18,6 +18,7 @@ function CardList() {
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
   const [timer, setTimer] = useState<boolean>(false);
+  const [countdown, setCountdown] = useState<number | null>(300);
 
   const { socket, thinkingStat } = useSocket(ENDPOINT, {
     username,
@@ -46,6 +47,10 @@ function CardList() {
 
       socket.on("timer", (newTimer: boolean) => {
         setTimer(newTimer);
+      });
+
+      socket.on("countdown", (newCountdown: number) => {
+        setCountdown(newCountdown);
       });
     }
     return () => {
@@ -101,6 +106,7 @@ function CardList() {
       )}
       {message && <p>{message}</p>}
       {resultMessage && <p>{resultMessage}</p>}
+      {countdown && <p>{countdown}</p>}
     </div>
   );
 }
