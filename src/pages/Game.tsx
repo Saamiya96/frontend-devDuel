@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import MyTimer from "../components/timer/MyTimer";
 import Card from "../components/cards/Card";
 import { ILanguage } from "../components/cards/cardTypes";
 import useSocket from "../hooks/useSocket";
@@ -18,7 +19,7 @@ function CardList() {
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
   const [timer, setTimer] = useState<boolean>(false);
-  const [countdown, setCountdown] = useState<number | null>(300);
+  const [countdown, setCountdown] = useState<number | null>(null);
 
   const { socket, thinkingStat } = useSocket(ENDPOINT, {
     username,
@@ -45,11 +46,11 @@ function CardList() {
         setResultMessage(newResultMessage);
       });
 
-      socket.on("timer", (newTimer: boolean) => {
+      socket.on("start_timer", (newTimer: boolean) => {
         setTimer(newTimer);
       });
 
-      socket.on("countdown", (newCountdown: number) => {
+      socket.on("countdown", (newCountdown: number | null) => {
         setCountdown(newCountdown);
       });
     }
@@ -73,6 +74,7 @@ function CardList() {
 
   return (
     <div>
+      <MyTimer countdown={countdown} timer={timer} />
       {data && (
         <Card
           key={data.id}
@@ -106,7 +108,6 @@ function CardList() {
       )}
       {message && <p>{message}</p>}
       {resultMessage && <p>{resultMessage}</p>}
-      {countdown && <p>{countdown}</p>}
     </div>
   );
 }
