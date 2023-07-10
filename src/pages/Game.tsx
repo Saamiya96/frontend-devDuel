@@ -74,6 +74,7 @@ function CardList() {
 
   return (
     <div>
+      <p>{username}</p>
       <MyTimer countdown={countdown} timer={timer} />
       {data && (
         <Card

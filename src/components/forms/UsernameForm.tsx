@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom" //
 
 interface UsernameFormProps {
   isVisible: boolean;
@@ -33,12 +34,14 @@ function UsernameForm({
             aria-label="username"
             placeholder="Enter username"
           />
+          <Link to="/waitingroom">
           <button
             className="flex-shrink-0 hover:bg-gray-900 border-none hover:text-white text-sm border-4 text-black py-1 px-2 rounded"
             type="submit"
           >
             Create Game
           </button>
+          </Link>
         </div>
       </form>
     </motion.div>
