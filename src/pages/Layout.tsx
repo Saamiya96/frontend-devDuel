@@ -13,13 +13,10 @@ function Layout() {
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
-          {location.pathname === "/about"} {location.pathname === "/results" ? (
-            <Link to="/">Back</Link>
-          ) : (
-            <Link to="/about">About</Link>
-          )}
+          {location.pathname === "/about" ? ( <Link to="/">Back</Link>) : ( <Link to="/about">About</Link>) }
         </motion.div>
       </nav>
+      
       <Outlet />
     </>
   );
