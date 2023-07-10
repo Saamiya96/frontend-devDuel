@@ -17,6 +17,7 @@ function CardList() {
   const [data, setData] = useState<ILanguage | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
+  const [timer, setTimer] = useState<boolean>(false);
 
   const { socket, thinkingStat } = useSocket(ENDPOINT, {
     username,
@@ -41,6 +42,10 @@ function CardList() {
 
       socket.on("result", (newResultMessage: string) => {
         setResultMessage(newResultMessage);
+      });
+
+      socket.on("timer", (newTimer: boolean) => {
+        setTimer(newTimer);
       });
     }
     return () => {
