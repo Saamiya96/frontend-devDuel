@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useWebSocket } from "../hooks/useWebSocket";
+import { useWebSocket } from "./useWaitingSocket";
 
 function useUsername() {
   const [username, setUsername] = useState<string>(

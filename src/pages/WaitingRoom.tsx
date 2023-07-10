@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useWebSocket } from "../hooks/useWebSocket";
+import { useWebSocket } from "../hooks/useWaitingSocket";
 
 function WaitingRoom() {
   const [users, setUsers] = useState<string[]>([]);
