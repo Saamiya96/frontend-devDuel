@@ -1,39 +1,11 @@
-// import { useState, useEffect } from "react";
-
-// const Results = () => {
-//   const [results, setResults] = useState([] as any[]);
-
-//   useEffect(() => {
-//     fetch("http://localhost:5000/results")
-//       .then((response) => response.json())
-//       .then((data) => setResults(data))
-//       .catch((error) => console.error("Error fetching results:", error));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Results</h1>
-//       {results.map((result) => (
-//         <div key={result.username}>
-//           <h3>{result.username}</h3>
-//           <p>Score: {result.score}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Results;
-
 import { useState, useEffect } from "react";
 
 interface Result {
   [username: string]: number;
 }
 
-
 const ResultsPage = () => {
-  const [results, setResults] = useState<Result[]>([]);
+  const [results, setResults] = useState<Result | null>(null);
 
   useEffect(() => {
     fetch("http://localhost:5000/results")
@@ -43,19 +15,20 @@ const ResultsPage = () => {
         }
         return response.json();
       })
-      .then((data: Result[]) => setResults(data))
+      .then((data: Result) => setResults(data))
       .catch((error) => console.error("Error fetching results:", error));
   }, []);
 
   return (
     <div>
       <h1>Results</h1>
-      {Object.entries(results).map(([username, score]) => (
-        <div>
-          <h3>User:{username}</h3>
-          <p>Score: {score}</p>
-        </div>
-      ))}
+      {results &&
+        Object.entries(results).map(([username, score]) => (
+          <div key={username}>
+            <h3>User: {username}</h3>
+            <p>Score: {score}</p>
+          </div>
+        ))}
     </div>
   );
 };

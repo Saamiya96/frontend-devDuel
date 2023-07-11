@@ -1,6 +1,5 @@
 import { ILanguage } from "./cardTypes";
 import CardHeader from "./CardHeader";
-import CardImage from "./CardImage";
 import CardStats from "./CardStats";
 
 interface CardProps {
@@ -16,10 +15,12 @@ function Card({
   pendingStat,
   leadingPlayer,
 }: CardProps) {
+  const imageUrl = `/src/assets/Images/Logos/${language.name}.PNG`;
+
   return (
     <div className="card">
       <CardHeader name={language.name} />
-      <CardImage imageUrl={language.imageUrl} />
+      <img src={imageUrl} className="w-1/3" alt="LanguageLogo" />
       <CardStats
         stats={language.stats}
         onStatSelect={onStatSelect}
