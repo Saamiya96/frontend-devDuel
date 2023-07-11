@@ -1,33 +1,37 @@
-import { motion } from "framer-motion";
-import React, { ChangeEvent } from "react";
+import { ChangeEvent } from "react";
+import { useState } from "react";
+
 import useUsername from "../hooks/useUsername";
 
+import FadeInTransition from "../components/divs/FadeInTransition";
 import UsernameForm from "../components/forms/UsernameForm";
 import RulesMenu from "../components/menus/RulesMenu";
 
-const homePositioning = "flex flex-col justify-around items-center";
-const contentWidth = "max-w-lg"; // Set the desired width for the content
+const homeContainer = "home-container p-16 space-y-60";
 
 function Home() {
-  const { username, setUsername } = useUsername();
+  const [username, setUsername] = useState("");
+  const { setUsername: setUsernameFromHook } = useUsername();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };
 
+  const handleCreateGame = () => {
+    setUsernameFromHook(username);
+  };
+
   return (
-    <motion.div 
-      className={`${homePositioning} ${contentWidth}`}
-      initial={{ opacity: 0, y: -10 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, ease: "easeInOut" },
-      }}
-    >
-      <UsernameForm username={username} handleChange={handleChange} />
-      <RulesMenu />
-    </motion.div>
+    <FadeInTransition>
+      <div className={homeContainer}>
+        <UsernameForm
+            username={username}
+            handleChange={handleChange}
+            handleCreateGame={handleCreateGame}
+          />
+        <RulesMenu />
+      </div>
+    </FadeInTransition>
   );
 }
 

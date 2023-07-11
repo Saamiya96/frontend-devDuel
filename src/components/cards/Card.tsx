@@ -16,10 +16,16 @@ function Card({
   pendingStat,
   leadingPlayer,
 }: CardProps) {
+  // Render the card component
   return (
     <div className="card">
+      {/* Render the card header */}
       <CardHeader name={language.name} />
+
+      {/* Render the card image */}
       <CardImage imageUrl={language.imageUrl} />
+
+      {/* Render the card stats */}
       <CardStats
         stats={language.stats}
         onStatSelect={onStatSelect}

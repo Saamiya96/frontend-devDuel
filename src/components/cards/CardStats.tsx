@@ -1,7 +1,8 @@
 import { IStats } from "./cardTypes";
 
-const cardStatsStyling = "card-stats";
-const cardStatStyling = "p-2 h-10 hover:animate-pulse hover:bg-blue-600 hover:text-white hover:cursor-pointer";
+// CSS class names for the card stats
+const cardStats = "card-stats";
+const cardStat = "card-stat p-2 h-10 hover:animate-pulse hover:bg-blue-600 hover:text-white hover:cursor-pointer";
 
 interface CardStatsProps {
   stats: IStats;
@@ -16,18 +17,21 @@ function CardStats({
   pendingStat,
   leadingPlayer,
 }: CardStatsProps) {
+  // Render the card stats
   return (
-    <div className={cardStatsStyling}>
+    <div
+      className={cardStats}
+    >
       {Object.entries(stats).map(([key, value], i) => (
         <div
-          className={cardStatStyling}
+          className={cardStat}
           key={i}
           onClick={() => onStatSelect(key)}
           style={{
-            backgroundColor:
-              leadingPlayer && key === pendingStat ? "orange" : "",
+            backgroundColor: leadingPlayer && key === pendingStat ? "orange" : "",
           }}
         >
+          {/* Display the stat name and its corresponding value */}
           <strong>{key}:</strong> {value}
         </div>
       ))}

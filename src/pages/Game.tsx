@@ -1,14 +1,27 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import FadeInTransition from "../components/divs/FadeInTransition";
+import MyTimer from "../components/timer/MyTimer";
 import Card from "../components/cards/Card";
 import { ILanguage } from "../components/cards/cardTypes";
-import useSocket from "../hooks/useSocket";
+
+import useSocket from "../hooks/useGameSocket";
 import useUsername from "../hooks/useUsername";
 
 const ENDPOINT = "http://localhost:5000";
 
+const gameBoard = "game-board flex flex-col justify-center items-center";
+const moveAlert = "move-alert mt-9 mb-2 p-1 border-t-8 border-2 border-yellow-500 flex items-center justify-around";
+const moveAlertText = "move-alert-text text-sm";
+const alertIcon = "alert-icon h-4";
+const gameMessage = "game-message w-full flex justify-center";
+
 function CardList() {
   const { username } = useUsername();
+
+  // State variables
   const [selectedStatValue, setSelectedStatValue] = useState<string | null>(null);
   const [pendingStatValue, setPendingStatValue] = useState<string | null>(null);
   const [shouldSend, setShouldSend] = useState(false);
@@ -16,6 +29,9 @@ function CardList() {
   const [data, setData] = useState<ILanguage | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
+  const [resultsPage, setResultsPage] = useState<boolean>(false);
+  const [timer, setTimer] = useState<boolean>(false);
+  const [countdown, setCountdown] = useState<number | null>(null);
 
   const { socket, thinkingStat } = useSocket(ENDPOINT, {
     username,
@@ -25,6 +41,7 @@ function CardList() {
 
   useEffect(() => {
     if (socket) {
+      // Event listeners for socket events
       socket.on("data", (newData: ILanguage) => {
         setData(newData);
         setShouldSend(false);
@@ -41,7 +58,17 @@ function CardList() {
       socket.on("result", (newResultMessage: string) => {
         setResultMessage(newResultMessage);
       });
+
+      socket.on("start_timer", (newTimer: boolean) => {
+        setTimer(newTimer);
+      });
+
+      socket.on("countdown", (newCountdown: number | null) => {
+        setCountdown(newCountdown);
+      });
     }
+
+    // Clean up the socket on component unmount
     return () => {
       if (socket) {
         socket.disconnect();
@@ -56,12 +83,13 @@ function CardList() {
         socket.emit("thinking_stat", value);
       }
     } else {
-      setMessage("Wait your turn, loser...");
+      setMessage("ERR: Turn execution failed.");
     }
   };
 
   useEffect(() => {
     if (message) {
+      // Remove message after 3 seconds
       const timeout = setTimeout(() => {
         setMessage(null);
       }, 3000);
@@ -71,16 +99,13 @@ function CardList() {
   }, [message]);
 
   return (
-    <motion.div 
-      className="w-max mx-auto flex flex-col items-center"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, ease: "easeInOut" },
-      }}
-      >
-      <div className="flex flex-col justify-center items-center">
+    <FadeInTransition>
+      <div className={gameBoard}>
+
+        <MyTimer countdown={countdown} timer={timer} />
+
+        {resultsPage && <Link to="/result">Results</Link>}
+
         {data && (
           <Card
             key={data.id}
@@ -90,27 +115,32 @@ function CardList() {
             onStatSelect={handleStatSelect}
           />
         )}
+
         <AnimatePresence>
           {thinkingStat && (
             <motion.div
-              className="mt-9 mb-2 p-1 border-t-8 border-2 border-yellow-500 flex items-center justify-around"
+              className={moveAlert}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <img 
-                className="h-7"
-                src="https://cdn-icons-png.flaticon.com/128/4539/4539472.png"/>
-              <p className="text-sm">{thinkingStat}</p>
-              <img 
-                className="h-7"
-                src="https://cdn-icons-png.flaticon.com/128/4539/4539472.png"/>
+              <img
+                className={alertIcon}
+                src="https://cdn-icons-png.flaticon.com/128/4539/4539472.png"
+              />
+              <p className={moveAlertText}>{thinkingStat}</p>
+              <img
+                className={alertIcon}
+                src="https://cdn-icons-png.flaticon.com/128/4539/4539472.png"
+              />
             </motion.div>
           )}
         </AnimatePresence>
+        
       </div>
-      <div className="w-full flex justify-center">
+
+      <div className={gameMessage}>
         <AnimatePresence>
           {message && (
             <motion.div
@@ -130,6 +160,7 @@ function CardList() {
           {resultMessage && <p className="text-xs">{resultMessage}</p>}
         </AnimatePresence>
       </div>
+
       <div className="flex justify-center">
         {isLeadingPlayer && pendingStatValue !== null && (
           <div className="mt-4 flex justify-center space-x-4">
@@ -154,7 +185,7 @@ function CardList() {
           </div>
         )}
       </div>
-    </motion.div>
+    </FadeInTransition>
   );
 }
 
