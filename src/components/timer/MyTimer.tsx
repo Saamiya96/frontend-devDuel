@@ -14,7 +14,7 @@ function MyTimer({ timer, countdown }: MyTimerProps) {
 
       const intervalId = setInterval(() => {
         setTimeLeft((timeLeft) => {
-          if (timeLeft === null || timeLeft <= 0) {
+          if (timeLeft === null || timeLeft <= 1) {
             clearInterval(intervalId);
             return 0;
           }
