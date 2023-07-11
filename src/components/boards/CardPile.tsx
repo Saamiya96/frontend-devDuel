@@ -1,55 +1,52 @@
-
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { useWebSocket } from "../../hooks/useWaitingSocket";
-import useUsername from '../../hooks/useUsername';
+import useUsername from "../../hooks/useUsername";
 
 function CardPile() {
   const { username } = useUsername();
   const [cardsInDeck, setCardsInDeck] = useState<number>(10);
   const [cardsInBlackHole, setCardsInBlackHole] = useState<number>(0);
-  const opponents = ['Cook', 'Gates', 'Musk', 'Zucc']
-  const [opponent, setOpponent] = useState<string | null>(localStorage.getItem('opponent') || null);
+  const [opponent, setOpponent] = useState<string | null>(
+    localStorage.getItem("opponent") || null
+  );
   const socket = useWebSocket();
-  
 
   useEffect(() => {
     if (socket) {
       socket.on("update_assets", (data) => {
-        setCardsInDeck(data[username])
-        setCardsInBlackHole(data['black_hole'])
-      })
+        setCardsInDeck(data[username]);
+        setCardsInBlackHole(data["black_hole"]);
+      });
     }
-  }, [socket, username])
+  }, [socket, username]);
 
-  let asset_num = 3
-  
+  let asset_num = 3;
+
   if (cardsInDeck < 2) {
-    asset_num = 1
-  }
-  else if (cardsInDeck < 6) {
-    asset_num = 2
-  }
-  else if (cardsInDeck < 11) {
-    asset_num = 3
-  }
-  else if (cardsInDeck < 16) {
-    asset_num = 4
-  }
-  else if (cardsInDeck < 21) {
-    asset_num = 5
+    asset_num = 1;
+  } else if (cardsInDeck < 6) {
+    asset_num = 2;
+  } else if (cardsInDeck < 11) {
+    asset_num = 3;
+  } else if (cardsInDeck < 16) {
+    asset_num = 4;
+  } else if (cardsInDeck < 21) {
+    asset_num = 5;
   }
 
   useEffect(() => {
+    const opponents = ["Cook", "Gates", "Musk", "Zucc"];
     if (opponent === null) {
-      const newOpponent = opponents[Math.floor(Math.random() * opponents.length)];
+      const newOpponent =
+        opponents[Math.floor(Math.random() * opponents.length)];
       setOpponent(newOpponent);
-      localStorage.setItem('opponent', newOpponent);
+      localStorage.setItem("opponent", newOpponent);
     }
-  }, []);
-  
+  }, [opponent]);
+
   const pileUrl = `/src/assets/Images/Deck/${asset_num}.PNG`;
   const opposition = `/src/assets/Images/Opponents/${opponent}.PNG`;
-  
+
   return (
     <div>
       <img src={opposition} className="w-1/5" alt="" />
@@ -61,4 +58,3 @@ function CardPile() {
 }
 
 export default CardPile;
-

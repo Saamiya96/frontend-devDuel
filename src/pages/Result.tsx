@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Result {
   [username: string]: number;
@@ -6,6 +7,7 @@ interface Result {
 
 const ResultsPage = () => {
   const [results, setResults] = useState<Result | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5000/results")
@@ -19,6 +21,17 @@ const ResultsPage = () => {
       .catch((error) => console.error("Error fetching results:", error));
   }, []);
 
+  const handleNewGame = () => {
+    fetch("http://localhost:5000/clear_data", { method: "POST" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error clearing data");
+        }
+        navigate("/waitingroom");
+      })
+      .catch((error) => console.error("Error clearing data:", error));
+  };
+
   return (
     <div>
       <h1>Results</h1>
@@ -29,6 +42,7 @@ const ResultsPage = () => {
             <p>Score: {score}</p>
           </div>
         ))}
+      <button onClick={handleNewGame}>Start New Game</button>
     </div>
   );
 };

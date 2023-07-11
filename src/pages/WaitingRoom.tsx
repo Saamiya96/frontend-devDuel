@@ -53,9 +53,7 @@ function WaitingRoom() {
           <button>Start Game</button>
         </Link>
       )}
-      {users.length < 2 && (
-        <p>Waiting for another player...</p>
-      )}
+      {users.length < 2 && <p>Waiting for another player...</p>}
     </div>
   );
 }
