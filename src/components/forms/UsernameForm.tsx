@@ -26,7 +26,7 @@ const UsernameForm: React.FC<UsernameFormProps> = ({
           aria-label="username"
           placeholder="username"
         />
-        <Link to="/game" className="p-2 h-10 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white" type="submit">
+        <Link to="/game" className="p-2 h-15 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white" type="submit">
           Run Program
         </Link>
       </form>

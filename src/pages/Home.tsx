@@ -6,7 +6,7 @@ import UsernameForm from "../components/forms/UsernameForm";
 import RulesMenu from "../components/menus/RulesMenu";
 
 const homePositioning = "flex flex-col justify-around items-center";
-const contentWidth = "max-w-lg"; // Set the desired width for the content
+const contentWidth = "w-100 md:w-200 lg:w-300"; // Set the desired width for the content
 
 function Home() {
   const { username, setUsername } = useUsername();
