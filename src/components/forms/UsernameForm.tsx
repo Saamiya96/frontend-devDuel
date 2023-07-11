@@ -5,15 +5,17 @@ interface UsernameFormProps {
   isVisible: boolean;
   username: string;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleCreateGame: () => void;
 }
-
 function UsernameForm({
   isVisible,
   username,
   handleChange,
+  handleCreateGame,
 }: UsernameFormProps) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    handleCreateGame();
   };
 
   return (

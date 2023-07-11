@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import MyTimer from "../components/timer/MyTimer";
 import Card from "../components/cards/Card";
 import { ILanguage } from "../components/cards/cardTypes";
-import useSocket from "../hooks/useSocket";
+import useSocket from "../hooks/useGameSocket";
 import useUsername from "../hooks/useUsername";
 
 const ENDPOINT = "http://localhost:5000";

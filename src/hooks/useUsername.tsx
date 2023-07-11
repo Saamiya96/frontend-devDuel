@@ -1,15 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useWebSocket } from "./useWaitingSocket";
+import { useNavigate } from "react-router-dom";
 
 function useUsername() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState<string>(
     localStorage.getItem("username") || ""
   );
+  const socket = useWebSocket();
 
-  useEffect(() => {
-    localStorage.setItem("username", username);
-  }, [username]);
+  const setUsernameAndNavigate = (newUsername: string) => {
+    setUsername(newUsername);
+    if (socket) {
+      socket.emit("waiting_room", newUsername);
+    }
+    localStorage.setItem("username", newUsername);
+    navigate("/waitingroom");
+  };
 
-  return { username, setUsername };
+  return { username, setUsername: setUsernameAndNavigate };
 }
 
 export default useUsername;
