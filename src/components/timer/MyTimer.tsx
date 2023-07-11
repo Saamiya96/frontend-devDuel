@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface MyTimerProps {
   timer: boolean;
@@ -7,6 +8,7 @@ interface MyTimerProps {
 
 function MyTimer({ timer, countdown }: MyTimerProps) {
   const [timeLeft, setTimeLeft] = useState<number | null>(countdown);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (timer) {
@@ -14,8 +16,9 @@ function MyTimer({ timer, countdown }: MyTimerProps) {
 
       const intervalId = setInterval(() => {
         setTimeLeft((timeLeft) => {
-          if (timeLeft === null || timeLeft <= 0) {
+          if (timeLeft === null || timeLeft <= 1) {
             clearInterval(intervalId);
+            navigate("/result");
             return 0;
           }
           return timeLeft - 1;
@@ -23,10 +26,10 @@ function MyTimer({ timer, countdown }: MyTimerProps) {
       }, 1000);
       return () => clearInterval(intervalId);
     }
-  }, [timer, countdown]);
+  }, [timer, countdown, navigate]);
 
-  const minutes = timeLeft !== null ? Math.floor(timeLeft / 60) : 0;
-  const seconds = timeLeft !== null ? Math.floor(timeLeft % 60) : 0;
+  const minutes = timeLeft !== null ? Math.floor(timeLeft / 60) : 1;
+  const seconds = timeLeft !== null ? Math.floor(timeLeft % 60) : 30;
 
   return (
     <div className="text-center">
