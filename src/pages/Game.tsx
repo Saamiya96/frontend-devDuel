@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyTimer from "../components/timer/MyTimer";
+import CardPile from "../components/boards/CardPile";
 import Card from "../components/cards/Card";
 import { ILanguage } from "../components/cards/cardTypes";
 import useSocket from "../hooks/useGameSocket";
@@ -78,6 +79,7 @@ function CardList() {
   return (
     <div>
       <MyTimer countdown={countdown} timer={timer} />
+      <CardPile/>
       {resultsPage && <Link to="/result">Link to Results Page</Link>}
       {data && (
         <Card

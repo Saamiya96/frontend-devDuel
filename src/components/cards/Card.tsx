@@ -1,6 +1,5 @@
 import { ILanguage } from "./cardTypes";
 import CardHeader from "./CardHeader";
-import CardImage from "./CardImage";
 import CardStats from "./CardStats";
 
 interface CardProps {
