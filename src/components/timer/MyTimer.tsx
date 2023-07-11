@@ -6,7 +6,7 @@ interface MyTimerProps {
 }
 
 function MyTimer({ timer, countdown }: MyTimerProps) {
-  const [timeLeft, setTimeLeft] = useState<number | null>(countdown);
+  const [timeLeft, setTimeLeft] = useState<number | null>(90);
 
   useEffect(() => {
     if (timer) {
