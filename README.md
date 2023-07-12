@@ -9,6 +9,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
   - [Installation](#installation)
   - [Local Usage](#local-usage)
 - [Play DevDuel](#play-devduel)
+- [Planning & Design](#planning--design)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
   - [Challenges](#challenges)
@@ -46,7 +47,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 <!-- Add gif here -->
 
-#### Planning & Design Tools
+## Planning & Design Tools
 
 - Trello Board ([View our board here](https://trello.com/b/npcKD8L1/devduel))
 - Excalidraw ([View our designs here](https://excalidraw.com/#json=p17GUJWNke-Vg9-daSzCm,1qDVS6BYGA6rijsMrLd7Eg))
