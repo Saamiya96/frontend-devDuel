@@ -1,4 +1,4 @@
-# Welcome to DevDuel!!! 📱
+# Welcome to DevDuel 🃏
 
 Welcome to DevDuel, the ultimate showdown of programming languages in the form of a Top Trumps style game! Prepare to witness the clash of titans as you pit the most popular programming languages against each other and determine once and for all which language reigns supreme.
 
@@ -7,7 +7,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - [Technologies](#technologies)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
-  - [Local Usage](#usage)
+  - [Local Usage](#local--usage)
 - [Play DevDuel](#play-devduel)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
