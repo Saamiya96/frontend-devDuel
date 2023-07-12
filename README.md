@@ -1,13 +1,6 @@
-### installation
-
-```
-npm install
-npm run dev
-```
-
 # Welcome to DevDuel!!! 📱
 
-Trial by Trivia is the name of our quiz app, where anyone can create a user name and play a quiz in whatever category they choose and wins points! How about playing against someone else and whoever has the highest score wins! Our quiz app has quizzes in many different categores from general knowledge, anime/manga, books, movies, television, science, maths and more! Come play Trial by Trivia with your friends and family!
+Welcome to DevDuel, the ultimate showdown of programming languages in the form of a Top Trumps style game! Prepare to witness the clash of titans as you pit the most popular programming languages against each other and determine once and for all which language reigns supreme.
 
 ## Table of Contents
 
@@ -15,8 +8,7 @@ Trial by Trivia is the name of our quiz app, where anyone can create a user name
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
   - [Local Usage](#usage)
-  - [Deployment](#deployment)
-- [See the Sites](#see-the-sites)
+- [Play DevDuel](#play-devduel)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
   - [Challenges](#challenges)
@@ -24,13 +16,18 @@ Trial by Trivia is the name of our quiz app, where anyone can create a user name
 - [Goals for the Future!](#goals-for-the-future)
 - [Contributors](#contributors)
 
-
 ## Technologies
 
 ### What technologies we used!
 
-![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=plastic) 
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=plastic&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=plastic) 
+![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=plastic&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-FFFFFF?style=plastic&logo=flask&logoColor=black)
+![Socket.IO]
+![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=plastic&logo=postgresql&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-1f425f?style=plastic.svg)
 
 
 ## Installation & Usage
@@ -52,7 +49,7 @@ Trial by Trivia is the name of our quiz app, where anyone can create a user name
 #### Planning & Design Tools
 
 - Trello Board ([View our board here](https://trello.com/b/npcKD8L1/devduel))
-- Excalidraw ([View our designs here](https://excalidraw.com/#json=r8s2A_guUTc1vLJZTOXZg,Eqa391AnFA6NdnInFcgNNw))
+- Excalidraw ([View our designs here](https://excalidraw.com/#json=p17GUJWNke-Vg9-daSzCm,1qDVS6BYGA6rijsMrLd7Eg))
 
 
 ## Wins & Challenges
