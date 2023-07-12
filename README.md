@@ -7,7 +7,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - [Technologies](#technologies)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
-  - [Local Usage](#local--usage)
+  - [Local Usage](#local-usage)
 - [Play DevDuel](#play-devduel)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
