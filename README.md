@@ -25,7 +25,8 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=plastic&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-FFFFFF?style=plastic&logo=flask&logoColor=black)
-![Socket.IO](https://img.shields.io/badge/v1?&message=Socket.io&color=38B2AC?style=plastic&logoColor=FFFFFF)
+<!-- ![Socket.IO](https://img.shields.io/badge/v1?&message=Socket.io&color=38B2AC?style=plastic&logoColor=FFFFFF) -->
+![Socket.IO](https://img.shields.io/npm/dm/socket.io.svg?style=flat)
 ![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
 
 ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=plastic&logo=postgresql&logoColor=white)
