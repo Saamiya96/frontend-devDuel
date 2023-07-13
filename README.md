@@ -5,12 +5,12 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ## Table of Contents
 
 - [Play DevDuel](#play-devduel)
+- [Deployment](#deployment)
 - [Technologies](#technologies)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
   - [Local Usage](#local-usage)
 - [Planning & Design](#planning--design)
-- [Deployment](#deployment)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
   - [Challenges](#challenges)
@@ -21,6 +21,9 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 ![](./about.gif)
 ![](./game.gif)
+
+## Deployment
+Check out our app here ([DevDuel](https://react-one-ashy.vercel.app/))
 
 ## Technologies
 
@@ -50,8 +53,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - Trello Board ([View our board here](https://trello.com/b/npcKD8L1/devduel))
 - Excalidraw ([View our designs here](https://excalidraw.com/#json=p17GUJWNke-Vg9-daSzCm,1qDVS6BYGA6rijsMrLd7Eg))
 
-## Deployment
-- Check out our app here ([DevDuel](https://react-one-ashy.vercel.app/))
 
 ## Wins & Challenges
 
