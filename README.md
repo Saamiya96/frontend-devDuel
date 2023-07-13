@@ -57,7 +57,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - Fully responsive app
 - Timer works correctly for each round
 - Multiplayer enabled
-- Testing at over 70% coverage
 - Eyecatching UI
 
 ### Challenges
@@ -65,10 +64,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - Incorporating Tailwind
 - Working with Typescript on the front-end
 - Adding the handmade assets to a functioning logic
-
-## Bugs
-
-- ?
 
 ## Future Features
 
@@ -92,10 +87,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - [x] Multiple player
 - [x] Timer
 - [x] Collect opponents cards
-
-### Technical
-
-- [x] ?
 
 ## Contributors
 
