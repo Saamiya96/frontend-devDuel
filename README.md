@@ -5,16 +5,21 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ## Table of Contents
 
 - [Play DevDuel](#play-devduel)
+- [Technologies](#technologies)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
   - [Local Usage](#local-usage)
 - [Planning & Design](#planning--design)
-- [Technologies](#technologies)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
   - [Challenges](#challenges)
 - [Future Features](#future-features)
 - [Contributors](#contributors)
+
+## Play DevDuel
+
+![](./about.gif)
+![](./game.gif)
 
 ## Technologies
 
@@ -27,11 +32,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ![Socket.IO](https://img.shields.io/badge/Socket.io-38B2AC?&style=plastic&logo=Socket.io&logoColor=white)
 ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=plastic&logo=postgresql&logoColor=white)
 ![VSCode](https://img.shields.io/badge/VS%20Code-35b393.svg?style=plastic&logo=visual-studio-code&logoColor=white)
-
-## Play DevDuel
-
-![](./about.gif)
-![](./game.gif)
 
 ## Installation & Usage
 
