@@ -1,3 +1,4 @@
+// The IStats interface defines the structure of the stats object
 export interface IStats {
   age: number;
   avg_salary: number;
@@ -6,6 +7,7 @@ export interface IStats {
   job_availability: number;
 }
 
+// The ILanguage interface defines the structure of the language object
 export interface ILanguage {
   id: number;
   name: string;

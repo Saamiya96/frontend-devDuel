@@ -1,13 +1,16 @@
 import { ChangeEvent } from "react";
 import { useState } from "react";
+
 import useUsername from "../hooks/useUsername";
+
+import FadeInTransition from "../components/divs/FadeInTransition";
 import UsernameForm from "../components/forms/UsernameForm";
-import Rules from "../components/text/Rules";
-import SeeRulesButton from "../components/buttons/SeeRulesButton";
+import RulesMenu from "../components/menus/RulesMenu";
+
+const homeContainer = "home-container p-16 space-y-60";
 
 function Home() {
   const [username, setUsername] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
   const { setUsername: setUsernameFromHook } = useUsername();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -18,28 +21,17 @@ function Home() {
     setUsernameFromHook(username);
   };
 
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
-
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col items-center">
+    <FadeInTransition>
+      <div className={`${homeContainer}`}>
         <UsernameForm
-          isVisible={isVisible}
           username={username}
           handleChange={handleChange}
           handleCreateGame={handleCreateGame}
         />
-        <div className="show-hide-box flex flex-col items-center">
-          <Rules isVisible={isVisible} />
-          <SeeRulesButton
-            isVisible={isVisible}
-            toggleVisibility={toggleVisibility}
-          />
-        </div>
+        <RulesMenu />
       </div>
-    </div>
+    </FadeInTransition>
   );
 }
 

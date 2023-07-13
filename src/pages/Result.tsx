@@ -1,6 +1,17 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import FadeInTransition from "../components/divs/FadeInTransition";
+
+const resultsContainer =
+  "results-container flex flex-col space-y-10 text-center";
+const participants = "participants flex flex-row space-x-10";
+const participant =
+  "participant flex flex-col border-b-2 border-red-500 bg-gradient-to-t from-gray-500 p-2";
+const participantText = "participant-text animate-pulse";
+const restartButton =
+  "restart-button text-green-500 hover:text-green-200 hover:bg-green-800 p-3";
+
 interface Result {
   [username: string]: number;
 }
@@ -33,17 +44,25 @@ const ResultsPage = () => {
   };
 
   return (
-    <div>
-      <h1>Results</h1>
-      {results &&
-        Object.entries(results).map(([username, score]) => (
-          <div key={username}>
-            <h3>User: {username}</h3>
-            <p>Score: {score}</p>
-          </div>
-        ))}
-      <button onClick={handleNewGame}>Start New Game</button>
-    </div>
+    <FadeInTransition>
+      <div className={resultsContainer}>
+        <h1>Results</h1>
+        <div className={participants}>
+          {results &&
+            Object.entries(results).map(([username, score]) => (
+              <div className={participant} key={username}>
+                <div className={participantText}>
+                  <h3>{username}</h3>
+                  <p>Score: {score}</p>
+                </div>
+              </div>
+            ))}
+        </div>
+        <button className={restartButton} onClick={handleNewGame}>
+          Restart Program
+        </button>
+      </div>
+    </FadeInTransition>
   );
 };
 

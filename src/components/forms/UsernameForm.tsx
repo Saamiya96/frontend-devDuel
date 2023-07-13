@@ -1,50 +1,53 @@
-import { ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
+import React, { ChangeEvent, FormEvent } from "react";
+
+const formContainer =
+  "form-container p-9 flex-row justify-center font-mono border-t-8 border-2 border-red-500 w-full";
+const gameTitle = "game-title text-center";
+const form = "form flex justify-around items-center";
+const usernameInput = "username-input w-64 h-10 p-2 focus:outline-none";
+const submitButton =
+  "submit-button p-2 h-10 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white";
 
 interface UsernameFormProps {
-  isVisible: boolean;
   username: string;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleCreateGame: () => void;
 }
-function UsernameForm({
-  isVisible,
+
+const UsernameForm: React.FC<UsernameFormProps> = ({
   username,
   handleChange,
   handleCreateGame,
-}: UsernameFormProps) {
+}: UsernameFormProps) => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleCreateGame();
   };
 
   return (
-    <motion.div
-      className="top-half flex flex-col items-center"
-      animate={!isVisible ? { y: 0 } : { y: -50 }}
-      transition={{ duration: 0.3 }}
-    >
-      <h1 className="mb-3">Dev Duel</h1>
-      <form className="w-full max-w-sm" onSubmit={handleSubmit}>
-        <div className="flex items-center border-b border-gray-900 py-2">
-          <input
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-            type="text"
-            value={username}
-            onChange={handleChange}
-            aria-label="username"
-            placeholder="Enter username"
-          />
-          <button
-            className="flex-shrink-0 hover:bg-gray-900 border-none hover:text-white text-sm border-4 text-black py-1 px-2 rounded"
-            type="submit"
-          >
-            Create Game
-          </button>
-        </div>
+    <div className={formContainer}>
+      <h1 className={gameTitle}>dev-duel.exe</h1>
+      <form className={form} onSubmit={handleSubmit}>
+        <input
+          className={usernameInput}
+          type="text"
+          value={username}
+          onChange={handleChange}
+          aria-label="username"
+          placeholder="username"
+          required
+        />
+        <motion.button
+          className={submitButton}
+          whileTap={{ scale: 0.97 }}
+          type="submit"
+        >
+          Run Program
+        </motion.button>
       </form>
-    </motion.div>
+    </div>
   );
-}
+};
 
 export default UsernameForm;
