@@ -33,8 +33,8 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 <p>
 <img src="./about.gif" width=400>
-<img src="./game.gif" width=100>
-<img src="./demo.gif" width=100>
+<img src="./game.gif" width=400>
+<img src="./demo.gif" width=400>
 </p>
 
 ## Installation & Usage
