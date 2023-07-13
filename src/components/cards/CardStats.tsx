@@ -2,7 +2,7 @@ import { IStats } from "./cardTypes";
 
 // CSS class names for the card stats
 const cardStats = "card-stats";
-const cardStat = "card-stat p-2 h-10 hover:animate-pulse hover:bg-blue-600 hover:text-white hover:cursor-pointer";
+const cardStat = "card-stat p-2 h-10 hover:animate-pulse hover:bg-blue-600 hover:text-white hover:cursor-pointer text-sm";
 
 interface CardStatsProps {
   stats: IStats;

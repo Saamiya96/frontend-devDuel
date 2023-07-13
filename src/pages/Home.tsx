@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <FadeInTransition>
-      <div className={homeContainer}>
+      <div className={`${homeContainer}`}>
         <UsernameForm
             username={username}
             handleChange={handleChange}
