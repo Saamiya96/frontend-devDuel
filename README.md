@@ -32,6 +32,8 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ## Play DevDuel
 
 ![](./about.gif)
+![](./game.gif)
+![](./about.gif)
 
 ## Installation & Usage
 
