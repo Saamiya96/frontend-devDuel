@@ -28,8 +28,8 @@ function MyTimer({ timer, countdown }: MyTimerProps) {
     }
   }, [timer, countdown, navigate]);
 
-  const minutes = timeLeft !== null ? Math.floor(timeLeft / 60) : 1;
-  const seconds = timeLeft !== null ? Math.floor(timeLeft % 60) : 30;
+  const minutes = timeLeft !== null ? Math.floor(timeLeft / 60) : 2;
+  const seconds = timeLeft !== null ? Math.floor(timeLeft % 60) : 0;
 
   return (
     <div className="text-center">
