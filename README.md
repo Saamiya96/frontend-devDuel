@@ -4,19 +4,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 ## Table of Contents
 
-<!-- - [Technologies](#technologies)
-- [Installation & Usage](#installation--usage)
-  - [Installation](#installation)
-  - [Local Usage](#local-usage)
-- [Play DevDuel](#play-devduel)
-- [Planning & Design](#planning--design)
-- [Wins & Challenges](#wins--challenges)
-  - [Wins](#wins)
-  - [Challenges](#challenges)
-- [Bugs](#bugs)
-- [Goals for the Future!](#goals-for-the-future)
-- [Contributors](#contributors) -->
-
 - [Play DevDuel](#play-devduel)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
