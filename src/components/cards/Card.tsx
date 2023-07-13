@@ -1,7 +1,10 @@
 import { ILanguage } from "./cardTypes";
 import CardHeader from "./CardHeader";
-import CardImage from "./CardImage";
 import CardStats from "./CardStats";
+
+const cardContainer = "card-container flex flex-col border-y-2 border-white bg-gray-500 items-center space-y-1 w-auto p-2";
+const languageLogoContainer = "language-logo-container w-52 h-32 overflow-hidden flex justify-end";
+const languageLogo = "language-logo object-cover object-center w-full h-auto mb-[-60%] mt-[-10%] p-5";
 
 interface CardProps {
   language: ILanguage;
@@ -16,16 +19,14 @@ function Card({
   pendingStat,
   leadingPlayer,
 }: CardProps) {
-  // Render the card component
+  const imageUrl = `/src/assets/Images/Logos/${language.name}.PNG`;
+
   return (
-    <div className="card">
-      {/* Render the card header */}
+    <div className={cardContainer}>
       <CardHeader name={language.name} />
-
-      {/* Render the card image */}
-      <CardImage imageUrl={language.imageUrl} />
-
-      {/* Render the card stats */}
+      <div className={languageLogoContainer}>
+        <img src={imageUrl} className={languageLogo} alt="LanguageLogo" />
+      </div>
       <CardStats
         stats={language.stats}
         onStatSelect={onStatSelect}

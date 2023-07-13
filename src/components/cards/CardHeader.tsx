@@ -1,5 +1,5 @@
 // CSS class name for the card header
-const cardHeader = "card-header";
+const cardHeader = "card-header font-bold text-xl";
 
 interface CardHeaderProps {
   name: string;

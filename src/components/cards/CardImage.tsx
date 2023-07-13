@@ -1,5 +1,6 @@
 // CSS class name for the card image container
-const cardImage = "card-image w-72";
+const cardImageContainer = "card-image-container";
+const cardImage = "card-image";
 
 interface CardImageProps {
   imageUrl: string;
@@ -8,9 +9,8 @@ interface CardImageProps {
 function CardImage({ imageUrl }: CardImageProps) {
   // Render the card image
   return (
-    <div className={cardImage}>
-      {/* Display the image */}
-      <img src={imageUrl} />
+    <div className={cardImageContainer}>
+      <img src={imageUrl} className={cardImage}/>
     </div>
   );
 }
