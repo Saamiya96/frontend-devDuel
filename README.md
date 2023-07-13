@@ -33,7 +33,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 ![](./about.gif)
 ![](./game.gif)
-![](./about.gif)
+![](./demo.gif)
 
 
 ## Installation & Usage
