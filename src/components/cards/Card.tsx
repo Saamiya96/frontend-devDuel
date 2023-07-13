@@ -2,9 +2,12 @@ import { ILanguage } from "./cardTypes";
 import CardHeader from "./CardHeader";
 import CardStats from "./CardStats";
 
-const cardContainer = "card-container w-64 flex flex-col border-y-2 border-white bg-gray-500 items-center space-y-1 p-2";
-const languageLogoContainer = "language-logo-container w-52 h-32 overflow-hidden flex justify-end";
-const languageLogo = "language-logo object-cover object-center w-full h-auto mb-[-60%] mt-[-10%] p-5";
+const cardContainer =
+  "card-container w-64 flex flex-col border-y-2 border-white bg-gray-500 items-center space-y-1 p-2";
+const languageLogoContainer =
+  "language-logo-container w-52 h-32 overflow-hidden flex justify-end";
+const languageLogo =
+  "language-logo object-cover object-center w-full h-auto mb-[-60%] mt-[-10%] p-5";
 
 interface CardProps {
   language: ILanguage;

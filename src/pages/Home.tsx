@@ -25,10 +25,10 @@ function Home() {
     <FadeInTransition>
       <div className={`${homeContainer}`}>
         <UsernameForm
-            username={username}
-            handleChange={handleChange}
-            handleCreateGame={handleCreateGame}
-          />
+          username={username}
+          handleChange={handleChange}
+          handleCreateGame={handleCreateGame}
+        />
         <RulesMenu />
       </div>
     </FadeInTransition>

@@ -5,8 +5,10 @@ import FadeInTransition from "../components/divs/FadeInTransition";
 
 const layoutContainer = "layout-container h-screen font-mono tracking-widest";
 const navbar = "navbar p-5 flex justify-center  text-green-400";
-const navbarItem = "navbar-item p-3 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white";
-const outlet = "outlet flex flex-col items-center justify-center font-mono tracking-widest";
+const navbarItem =
+  "navbar-item p-3 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white";
+const outlet =
+  "outlet flex flex-col items-center justify-center font-mono tracking-widest";
 
 function Layout() {
   const location = useLocation();
@@ -23,57 +25,54 @@ function Layout() {
 
   return (
     <FadeInTransition>
-
       <div className={layoutContainer}>
-        
         <nav className={navbar}>
-            {location.pathname === "/about" ? (
-              <motion.button 
-                className={navbarItem} 
-                whileTap={{ scale: 0.97 }}
-                onClick={handleGoBack} 
-                >
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.5, ease: "easeInOut" },
-                  }}
-                  whileHover={{
-                    y: -5,
-                    transition: { duration: 0.2, ease: "easeInOut" },
-                  }}
-                  >
-                  Back
-                </motion.span>
-              </motion.button>
-            ) : (
-              <motion.button 
-                className={navbarItem}
-                whileTap={{ scale: 0.97 }}
-                onClick={handleGoToAbout}
+          {location.pathname === "/about" ? (
+            <motion.button
+              className={navbarItem}
+              whileTap={{ scale: 0.97 }}
+              onClick={handleGoBack}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.5, ease: "easeInOut" },
+                }}
+                whileHover={{
+                  y: -5,
+                  transition: { duration: 0.2, ease: "easeInOut" },
+                }}
               >
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.5, ease: "easeInOut" },
-                  }}
-                  whileHover={{
-                    y: -5,
-                    transition: { duration: 0.2, ease: "easeInOut" },
-                  }}
-                  >
-                  About
-                </motion.span>
-              </motion.button>
-            )}
+                Back
+              </motion.span>
+            </motion.button>
+          ) : (
+            <motion.button
+              className={navbarItem}
+              whileTap={{ scale: 0.97 }}
+              onClick={handleGoToAbout}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.5, ease: "easeInOut" },
+                }}
+                whileHover={{
+                  y: -5,
+                  transition: { duration: 0.2, ease: "easeInOut" },
+                }}
+              >
+                About
+              </motion.span>
+            </motion.button>
+          )}
         </nav>
 
         <div className={outlet}>
           <Outlet />
         </div>
-
       </div>
     </FadeInTransition>
   );

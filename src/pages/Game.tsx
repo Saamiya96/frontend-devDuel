@@ -17,17 +17,24 @@ const ENDPOINT = "http://localhost:5000";
 const gameBoard = "game-board space-y-5";
 const timerContainer = "timer-container position-absolute";
 const deckHUD = "deck-hud flex items-center justify-between w-auto space-x-20";
-const moveAlert = "move-alert mt-9 mb-2 p-1 border-t-8 border-2 border-yellow-500 flex items-center justify-around position-relative";
+const moveAlert =
+  "move-alert mt-9 mb-2 p-1 border-t-8 border-2 border-yellow-500 flex items-center justify-around position-relative";
 const moveAlertText = "move-alert-text text-sm";
 const alertIcon = "alert-icon h-4 animate-ping";
-const gameMessageContainer = "game-message-container w-full flex justify-center position-relative";
-const messageMotion = "mt-9 mb-2 p-1 border-t-8 border-2 border-red-500 flex items-center justify-around position-absolute";
+const gameMessageContainer =
+  "game-message-container w-full flex justify-center position-relative";
+const messageMotion =
+  "mt-9 mb-2 p-1 border-t-8 border-2 border-red-500 flex items-center justify-around position-absolute";
 const loadingIcon = "loading-icon h-4 animate-spin";
 const messageText = "message-text text-sm";
-const confirmChoiceContainer = "confirm-choice-container flex justify-center position-relative";
-const buttonsContainer = "buttons-container mt-4 flex justify-center space-x-4 position-absolute";
-const buttons = "buttons p-2 h-10 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white flex-auto";
-const resultsContainer = "results-container flex flex-col text-center justify-center position-relative pt-10 space-y-4";
+const confirmChoiceContainer =
+  "confirm-choice-container flex justify-center position-relative";
+const buttonsContainer =
+  "buttons-container mt-4 flex justify-center space-x-4 position-absolute";
+const buttons =
+  "buttons p-2 h-10 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white flex-auto";
+const resultsContainer =
+  "results-container flex flex-col text-center justify-center position-relative pt-10 space-y-4";
 
 function CardList() {
   const { username } = useUsername();
@@ -132,16 +139,19 @@ function CardList() {
 
           <CardPile />
         </div>
-
       </div>
-      
+
       <AnimatePresence>
         <div className={resultsContainer}>
           {resultMessage && <p className={messageText}>{resultMessage}</p>}
-          {resultsPage && <Link to="/result" className={buttons}>Results</Link>}
+          {resultsPage && (
+            <Link to="/result" className={buttons}>
+              Results
+            </Link>
+          )}
         </div>
       </AnimatePresence>
-      
+
       <div className={gameMessageContainer}>
         <AnimatePresence>
           {thinkingStat && (

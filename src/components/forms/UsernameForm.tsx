@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import React, { ChangeEvent, FormEvent } from "react";
 
-const formContainer = "form-container p-9 flex-row justify-center font-mono border-t-8 border-2 border-red-500 w-full";
+const formContainer =
+  "form-container p-9 flex-row justify-center font-mono border-t-8 border-2 border-red-500 w-full";
 const gameTitle = "game-title text-center";
 const form = "form flex justify-around items-center";
 const usernameInput = "username-input w-64 h-10 p-2 focus:outline-none";
-const submitButton = "submit-button p-2 h-10 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white";
+const submitButton =
+  "submit-button p-2 h-10 bg-red-500 text-white hover:animate-pulse hover:bg-blue-600 hover:text-white";
 
 interface UsernameFormProps {
   username: string;
