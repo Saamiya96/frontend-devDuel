@@ -35,6 +35,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=plastic&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=plastic) 
 ![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-61DAFB?.svg?style=plastic&logo=vite&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=plastic&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-FFFFFF?style=plastic&logo=flask&logoColor=black)
 ![Socket.IO](https://img.shields.io/badge/Socket.io-38B2AC?&style=plastic&logo=Socket.io&logoColor=white)
