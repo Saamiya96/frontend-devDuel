@@ -23,7 +23,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ![](./game.gif)
 
 ## Deployment
-Check out our app here -> [DevDuel](https://react-one-ashy.vercel.app/)
+Check out our app here ➡️ [DevDuel](https://react-one-ashy.vercel.app/)
 
 ## Technologies
 
