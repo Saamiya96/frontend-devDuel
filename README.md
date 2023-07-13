@@ -1,37 +1,38 @@
-### installation
+# Welcome to DevDuel 🃏
 
-```
-npm install
-npm run dev
-```
-
-# Welcome to DevDuel!!! 📱
-
-Trial by Trivia is the name of our quiz app, where anyone can create a user name and play a quiz in whatever category they choose and wins points! How about playing against someone else and whoever has the highest score wins! Our quiz app has quizzes in many different categores from general knowledge, anime/manga, books, movies, television, science, maths and more! Come play Trial by Trivia with your friends and family!
+Welcome to DevDuel, the ultimate showdown of programming languages in the form of a Top Trumps style game! Prepare to witness the clash of titans as you pit the most popular programming languages against each other and determine once and for all which language reigns supreme.
 
 ## Table of Contents
 
-- [Technologies](#technologies)
+- [Play DevDuel](#play-devduel)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
-  - [Local Usage](#usage)
-  - [Deployment](#deployment)
-- [See the Sites](#see-the-sites)
+  - [Local Usage](#local-usage)
+- [Planning & Design](#planning--design)
+- [Technologies](#technologies)
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
   - [Challenges](#challenges)
 - [Bugs](#bugs)
-- [Goals for the Future!](#goals-for-the-future)
+- [Future Features](#future-features)
 - [Contributors](#contributors)
-
 
 ## Technologies
 
-### What technologies we used!
-
-![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=plastic) 
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=plastic&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=plastic) 
+![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=plastic&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-61DAFB?.svg?style=plastic&logo=vite&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=plastic&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-FFFFFF?style=plastic&logo=flask&logoColor=black)
+![Socket.IO](https://img.shields.io/badge/Socket.io-38B2AC?&style=plastic&logo=Socket.io&logoColor=white)
+![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=plastic&logo=postgresql&logoColor=white)
+![VSCode](https://img.shields.io/badge/VS%20Code-35b393.svg?style=plastic&logo=visual-studio-code&logoColor=white)
 
+## Play DevDuel
+
+![](./about.gif)
+![](./game.gif)
 
 ## Installation & Usage
 
@@ -44,16 +45,10 @@ Trial by Trivia is the name of our quiz app, where anyone can create a user name
 - Run `npm install` to install dependencies
 - Run `npm run start` to start local server and run DevDuel
 
-
-## Play DevDuel
-
-<!-- Add gif here -->
-
-#### Planning & Design Tools
+## Planning & Design
 
 - Trello Board ([View our board here](https://trello.com/b/npcKD8L1/devduel))
-- Excalidraw ([View our designs here](https://excalidraw.com/#json=r8s2A_guUTc1vLJZTOXZg,Eqa391AnFA6NdnInFcgNNw))
-
+- Excalidraw ([View our designs here](https://excalidraw.com/#json=p17GUJWNke-Vg9-daSzCm,1qDVS6BYGA6rijsMrLd7Eg))
 
 ## Wins & Challenges
 
@@ -68,14 +63,14 @@ Trial by Trivia is the name of our quiz app, where anyone can create a user name
 ### Challenges
 
 - Incorporating Tailwind
-- Working with Typescript
-- Adding the handmade assests to a functioning logic
+- Working with Typescript on the front-end
+- Adding the handmade assets to a functioning logic
 
 ## Bugs
 
 - ?
 
-## Goals for the Future!
+## Future Features
 
 - Add more players for different rooms
 - User authentication e.g. username, password
@@ -103,8 +98,6 @@ Trial by Trivia is the name of our quiz app, where anyone can create a user name
 - [x] ?
 
 ## Contributors
-
-Who worked on DevDuel
 
 - [Nishad Rai](https://github.com/nrai14)
 - [Adrian Hards ](https://github.com/adrianHards)
