@@ -13,7 +13,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - [Wins & Challenges](#wins--challenges)
   - [Wins](#wins)
   - [Challenges](#challenges)
-- [Bugs](#bugs)
 - [Future Features](#future-features)
 - [Contributors](#contributors)
 
