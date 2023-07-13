@@ -31,7 +31,7 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 ## Play DevDuel
 
-<!-- Add gif here -->
+![](./about.gif)
 
 ## Installation & Usage
 
@@ -44,13 +44,10 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 - Run `npm install` to install dependencies
 - Run `npm run start` to start local server and run DevDuel
 
-
-
 ## Planning & Design
 
 - Trello Board ([View our board here](https://trello.com/b/npcKD8L1/devduel))
 - Excalidraw ([View our designs here](https://excalidraw.com/#json=p17GUJWNke-Vg9-daSzCm,1qDVS6BYGA6rijsMrLd7Eg))
-
 
 ## Wins & Challenges
 
