@@ -40,7 +40,8 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ![Flask](https://img.shields.io/badge/Flask-FFFFFF?style=plastic&logo=flask&logoColor=black)
 ![Socket.IO](https://img.shields.io/badge/Socket.io-38B2AC?&style=plastic&logo=Socket.io&logoColor=white)
 ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=plastic&logo=postgresql&logoColor=white)
-![VSCode](https://img.shields.io/badge/VSCode-FFFFFF?style=plastic.svg)
+<!-- ![VSCode](https://img.shields.io/badge/VSCode-FFFFFF?style=plastic.svg) -->
+![VSCode](https://img.shields.io/badge/VS%20Code-35b393.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ## Play DevDuel
 
