@@ -5,7 +5,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 ## Table of Contents
 
 - [Play DevDuel](#play-devduel)
-- [Deployment](#deployment)
 - [Technologies](#technologies)
 - [Installation & Usage](#installation--usage)
   - [Installation](#installation)
@@ -21,9 +20,6 @@ Welcome to DevDuel, the ultimate showdown of programming languages in the form o
 
 ![](./about.gif)
 ![](./game.gif)
-
-## Deployment
-Check out our app here  ➡️  [DevDuel](https://react-one-ashy.vercel.app/)
 
 ## Technologies
 
